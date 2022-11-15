@@ -38,7 +38,7 @@ class ThirdScreen: UIViewController {
     let buttonOne : UIButton = {
         let button = UIButton()
         button.configuration = .plain()
-        button.configuration?.baseForegroundColor = .purple
+        button.configuration?.baseForegroundColor = .gray
         button.configuration?.title = "Previous"
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -56,6 +56,7 @@ class ThirdScreen: UIViewController {
     }()
     
     
+    
     let buttonMiddle : UIButton = {
         let button = UIButton()
         button.configuration = .plain()
@@ -70,41 +71,68 @@ class ThirdScreen: UIViewController {
         let pageCOntroller = UIPageControl()
         pageCOntroller.currentPage = 0
         pageCOntroller.numberOfPages = 4
+        pageCOntroller.pageIndicatorTintColor = .gray
+        pageCOntroller.currentPageIndicatorTintColor = .purple
         return pageCOntroller
     }()
     
-//    fileprivate func buttonControlsInStack () {
+    fileprivate func buttonControlsInStack () {
+        let yellowView = UIView()
+        yellowView.backgroundColor = .yellow
+
+        let blueView = UIView()
+        blueView.backgroundColor = .blue
+
+        let stackView = UIStackView(arrangedSubviews: [buttonOne , pageCOntroller , buttonTwo])
+        stackView.distribution = .equalSpacing
+        
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: descriptionSubText.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: descriptionSubText.trailingAnchor),
+        ])
+      
+    }
+    /// [OR YOU CAN MAKE IT LAZY VARIABLE]
+//    lazy var  buttonControlsInStack :UIStackView =  {
 //        let yellowView = UIView()
 //        yellowView.backgroundColor = .yellow
 //
 //        let blueView = UIView()
 //        blueView.backgroundColor = .blue
 //
-//        let stackView = UIStackView(arrangedSubviews: [buttonOne , buttonMiddle , buttonTwo])
+//        let stackView = UIStackView(arrangedSubviews: [buttonOne , pageCOntroller , buttonTwo])
+//        stackView.distribution = .equalSpacing
+//
+//        view.addSubview(stackView)
 //        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.distribution = .fillEqually
 //
 //        NSLayoutConstraint.activate([
-//            stackView.bottomAnchor.constraint(equalTo: buttonTwo.topAnchor , constant: -20),
+//            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor , constant: -20),
 //            stackView.leadingAnchor.constraint(equalTo: descriptionSubText.leadingAnchor),
 //            stackView.trailingAnchor.constraint(equalTo: descriptionSubText.trailingAnchor),
-//            stackView.heightAnchor.constraint(equalToConstant: 50),
 //        ])
-//        view.addSubview(stackView)
-//    }
-//
+//      return stackView
+//    }()
+
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         view.addSubview(firstImageView)
         view.addSubview(descriptionText)
         view.addSubview(descriptionSubText)
-        view.addSubview(buttonOne)
-        view.addSubview(buttonTwo)
-        view.addSubview(buttonMiddle)
-        
+//        view.addSubview(buttonControlsInStack)
+//        view.addSubview(buttonOne)
+//        view.addSubview(buttonTwo)
+//        view.addSubview(buttonMiddle)
+        buttonControlsInStack()
         setupNsLayout()
         //        let hfhfh = pp?(24 , "Swostil")
     }
@@ -124,19 +152,19 @@ class ThirdScreen: UIViewController {
             descriptionSubText.topAnchor.constraint(equalTo: descriptionText.bottomAnchor , constant: 10),
             descriptionSubText.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 40),
             descriptionSubText.trailingAnchor.constraint(equalTo: view.trailingAnchor ,constant: -40),
+            /// [COULD REMOVE THESE BUTTON CONSTRAINTS DUE TO USE OF UISTACKVIEW]
+//            buttonOne.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor ,constant: -20),
+//            buttonOne.leadingAnchor.constraint(equalTo: descriptionSubText.leadingAnchor),
+//            buttonOne.trailingAnchor.constraint(equalTo: buttonMiddle.leadingAnchor, constant: -20),
             //
-            buttonOne.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor ,constant: -20),
-            buttonOne.leadingAnchor.constraint(equalTo: descriptionSubText.leadingAnchor),
-            buttonOne.trailingAnchor.constraint(equalTo: buttonMiddle.leadingAnchor, constant: -20),
+//            buttonTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor ,constant: -20),
+//            buttonTwo.trailingAnchor.constraint(equalTo: descriptionSubText.trailingAnchor),
+//            buttonTwo.leadingAnchor.constraint(equalTo: buttonMiddle.trailingAnchor),
             //
-            buttonTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor ,constant: -20),
-            buttonTwo.trailingAnchor.constraint(equalTo: descriptionSubText.trailingAnchor),
-            buttonTwo.leadingAnchor.constraint(equalTo: buttonMiddle.trailingAnchor),
-            //
-            buttonMiddle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -20),
-            buttonMiddle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonMiddle.leadingAnchor.constraint(equalTo: buttonOne.trailingAnchor , constant: 40),
-            buttonMiddle.trailingAnchor.constraint(equalTo: buttonTwo.leadingAnchor , constant:  -20),
+//            buttonMiddle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -20),
+//            buttonMiddle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            buttonMiddle.leadingAnchor.constraint(equalTo: buttonOne.trailingAnchor , constant: 40),
+//            buttonMiddle.trailingAnchor.constraint(equalTo: buttonTwo.leadingAnchor , constant:  -20),
             //
         ])
         
