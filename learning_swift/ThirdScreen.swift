@@ -103,8 +103,8 @@ class ThirdScreen: UIViewController {
         view.addSubview(descriptionSubText)
         view.addSubview(buttonOne)
         view.addSubview(buttonTwo)
-//        view.addSubview(buttonMiddle)
-        view.addSubview(pageCOntroller)
+        view.addSubview(buttonMiddle)
+        
         setupNsLayout()
         //        let hfhfh = pp?(24 , "Swostil")
     }
@@ -133,10 +133,10 @@ class ThirdScreen: UIViewController {
             buttonTwo.trailingAnchor.constraint(equalTo: descriptionSubText.trailingAnchor),
             buttonTwo.leadingAnchor.constraint(equalTo: buttonMiddle.trailingAnchor),
             //
-            pageCOntroller.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -20),
-            pageCOntroller.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pageCOntroller.leadingAnchor.constraint(equalTo: buttonOne.trailingAnchor , constant: 40),
-            pageCOntroller.trailingAnchor.constraint(equalTo: buttonTwo.leadingAnchor , constant:  -20),
+            buttonMiddle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -20),
+            buttonMiddle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonMiddle.leadingAnchor.constraint(equalTo: buttonOne.trailingAnchor , constant: 40),
+            buttonMiddle.trailingAnchor.constraint(equalTo: buttonTwo.leadingAnchor , constant:  -20),
             //
         ])
         
