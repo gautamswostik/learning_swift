@@ -18,6 +18,7 @@
 		7C5B09EE2923295F00D15433 /* learning_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09ED2923295F00D15433 /* learning_swiftUITestsLaunchTests.swift */; };
 		7C5B09FD29232AA900D15433 /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09FC29232AA900D15433 /* SecondScreen.swift */; };
 		7C5B09FF29232ADC00D15433 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09FE29232ADC00D15433 /* ThirdScreen.swift */; };
+		7C641CF42923D8940082C6FB /* SpotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C641CF32923D8940082C6FB /* SpotifyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7C5B09ED2923295F00D15433 /* learning_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C5B09FC29232AA900D15433 /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
 		7C5B09FE29232ADC00D15433 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
+		7C641CF32923D8940082C6FB /* SpotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				7C5B09D82923295F00D15433 /* Info.plist */,
 				7C5B09FC29232AA900D15433 /* SecondScreen.swift */,
 				7C5B09FE29232ADC00D15433 /* ThirdScreen.swift */,
+				7C641CF32923D8940082C6FB /* SpotifyViewController.swift */,
 			);
 			path = learning_swift;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				7C5B09FF29232ADC00D15433 /* ThirdScreen.swift in Sources */,
 				7C5B09CB2923295E00D15433 /* AppDelegate.swift in Sources */,
 				7C5B09CD2923295E00D15433 /* SceneDelegate.swift in Sources */,
+				7C641CF42923D8940082C6FB /* SpotifyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

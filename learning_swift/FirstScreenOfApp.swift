@@ -11,11 +11,13 @@ class FirstScreenOfApp: UIViewController {
     let button = UIButton()
     let buttonTwo = UIButton()
     let buttonThree = UIButton()
+    let spotify = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
         setupButtonTwo()
         setupButtonThree()
+        setupSpotify()
         view.backgroundColor = .white
         title = "This is first Screen"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -76,6 +78,23 @@ class FirstScreenOfApp: UIViewController {
         ])
     }
     
+    func setupSpotify(){
+        view.addSubview(spotify)
+        spotify.configuration = .filled()
+        spotify.configuration?.baseBackgroundColor = .systemPink
+        spotify.configuration?.title = "Spotify Clone"
+        spotify.translatesAutoresizingMaskIntoConstraints = false
+        spotify.addTarget(self, action: #selector(navitateToSpotifyScreen), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            spotify.topAnchor.constraint(equalTo: buttonTwo.bottomAnchor, constant: 10),
+            spotify.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+            spotify.widthAnchor.constraint(equalToConstant: 300),
+            spotify.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+    }
+    
     @objc func navitateToNextScreen(){
         let nextScreen = SecondScreen()
         navigationController?.pushViewController(nextScreen, animated: true)
@@ -83,6 +102,11 @@ class FirstScreenOfApp: UIViewController {
     
     @objc func navitateToThirdScreen(){
         let nextScreen = ThirdScreen()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+    @objc func navitateToSpotifyScreen(){
+        let nextScreen = SpotifyViewController()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
