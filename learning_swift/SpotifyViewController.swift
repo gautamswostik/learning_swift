@@ -50,6 +50,10 @@ class SpotifyViewController: UIViewController {
         spotifyHeder.distribution = .equalSpacing
         spotifyHeder.translatesAutoresizingMaskIntoConstraints = false
         
+        let chip = ChipViewController()
+        chip.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(chip)
+        
         view.addSubview(spotifyHeder)
         
         NSLayoutConstraint.activate([
@@ -57,9 +61,25 @@ class SpotifyViewController: UIViewController {
             spotifyHeder.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor , constant:20),
             spotifyHeder.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
+            //
+            chip.leadingAnchor.constraint(equalTo: spotifyHeder.leadingAnchor,constant: 40),
+            chip.trailingAnchor.constraint(equalTo: spotifyHeder.trailingAnchor),
+            chip.topAnchor.constraint(equalTo: spotifyHeder.bottomAnchor , constant: 20),
+            chip.heightAnchor.constraint(equalToConstant: 40),
+            chip.widthAnchor.constraint(equalToConstant: 100)
+            
         ])
         
     }
+    
+    fileprivate func spotifyChip(){
+       
+        NSLayoutConstraint.activate([
+            
+            
+        ])
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +87,7 @@ class SpotifyViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.setHidesBackButton(true, animated: true)
         spotifyHeader()
+        spotifyChip()
     }
     
     

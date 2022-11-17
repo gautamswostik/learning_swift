@@ -106,7 +106,7 @@ class FirstScreenOfApp: UIViewController {
     }
     
     @objc func navitateToSpotifyScreen(){
-        let nextScreen = SpotifyViewController()
+        let nextScreen = SpotifyTabBarViewController()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
 }
