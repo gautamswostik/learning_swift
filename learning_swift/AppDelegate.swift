@@ -13,7 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let windowScene = UIWindow(frame: UIScreen.main.bounds)
+//        if AuthManager.auth.isSignedIn {
+//            windowScene.rootViewController =  SpotifyTabBarViewController()
+//        }else{
+//            let navVc =  UINavigationController(rootViewController: WelcomeViewController())
+            let navVc =  UINavigationController(rootViewController: HomeViewController())
+            navVc.navigationBar.prefersLargeTitles = true
+            navVc.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            windowScene.rootViewController = navVc
+//        }
+        
         return true
     }
 

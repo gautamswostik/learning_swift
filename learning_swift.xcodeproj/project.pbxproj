@@ -12,6 +12,10 @@
 		7C03AB732925CDFB00567026 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB722925CDFB00567026 /* SearchViewController.swift */; };
 		7C03AB752925CE0900567026 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB742925CE0900567026 /* LibraryViewController.swift */; };
 		7C03AB772925CE7500567026 /* SpotifyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB762925CE7500567026 /* SpotifyTabBarViewController.swift */; };
+		7C03AB7A2927186600567026 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB792927186600567026 /* AuthManager.swift */; };
+		7C03AB7C29271A1800567026 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB7B29271A1800567026 /* WelcomeViewController.swift */; };
+		7C03AB7E2927211800567026 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB7D2927211800567026 /* AuthViewController.swift */; };
+		7C03AB8129275A3C00567026 /* NetworkImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03AB8029275A3C00567026 /* NetworkImageExtension.swift */; };
 		7C5B09CB2923295E00D15433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09CA2923295E00D15433 /* AppDelegate.swift */; };
 		7C5B09CD2923295E00D15433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09CC2923295E00D15433 /* SceneDelegate.swift */; };
 		7C5B09CF2923295E00D15433 /* FirstScreenOfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B09CE2923295E00D15433 /* FirstScreenOfApp.swift */; };
@@ -49,6 +53,10 @@
 		7C03AB722925CDFB00567026 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7C03AB742925CE0900567026 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7C03AB762925CE7500567026 /* SpotifyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyTabBarViewController.swift; sourceTree = "<group>"; };
+		7C03AB792927186600567026 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7C03AB7B29271A1800567026 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7C03AB7D2927211800567026 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7C03AB8029275A3C00567026 /* NetworkImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageExtension.swift; sourceTree = "<group>"; };
 		7C5B09C72923295E00D15433 /* learning_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learning_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5B09CA2923295E00D15433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5B09CC2923295E00D15433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +119,22 @@
 			path = SpotifyTabViews;
 			sourceTree = "<group>";
 		};
+		7C03AB782927184400567026 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7C03AB792927186600567026 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7C03AB7F29275A1B00567026 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C03AB8029275A3C00567026 /* NetworkImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7C5B09BE2923295E00D15433 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +158,8 @@
 		7C5B09C92923295E00D15433 /* learning_swift */ = {
 			isa = PBXGroup;
 			children = (
+				7C03AB7F29275A1B00567026 /* Extensions */,
+				7C03AB782927184400567026 /* Managers */,
 				7C03AB6F2925CDCA00567026 /* SpotifyTabViews */,
 				7C03AB6C2925C15500567026 /* CustomComponents */,
 				7C5B09CA2923295E00D15433 /* AppDelegate.swift */,
@@ -145,6 +171,8 @@
 				7C5B09D82923295F00D15433 /* Info.plist */,
 				7C5B09FC29232AA900D15433 /* SecondScreen.swift */,
 				7C5B09FE29232ADC00D15433 /* ThirdScreen.swift */,
+				7C03AB7D2927211800567026 /* AuthViewController.swift */,
+				7C03AB7B29271A1800567026 /* WelcomeViewController.swift */,
 				7C641CF32923D8940082C6FB /* SpotifyViewController.swift */,
 			);
 			path = learning_swift;
@@ -299,15 +327,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5B09CF2923295E00D15433 /* FirstScreenOfApp.swift in Sources */,
+				7C03AB7A2927186600567026 /* AuthManager.swift in Sources */,
 				7C03AB6E2925C17400567026 /* ChipViewController.swift in Sources */,
 				7C5B09FD29232AA900D15433 /* SecondScreen.swift in Sources */,
 				7C03AB732925CDFB00567026 /* SearchViewController.swift in Sources */,
 				7C03AB712925CDEC00567026 /* HomeViewController.swift in Sources */,
+				7C03AB7C29271A1800567026 /* WelcomeViewController.swift in Sources */,
 				7C5B09FF29232ADC00D15433 /* ThirdScreen.swift in Sources */,
 				7C03AB752925CE0900567026 /* LibraryViewController.swift in Sources */,
 				7C03AB772925CE7500567026 /* SpotifyTabBarViewController.swift in Sources */,
+				7C03AB7E2927211800567026 /* AuthViewController.swift in Sources */,
 				7C5B09CB2923295E00D15433 /* AppDelegate.swift in Sources */,
 				7C5B09CD2923295E00D15433 /* SceneDelegate.swift in Sources */,
+				7C03AB8129275A3C00567026 /* NetworkImageExtension.swift in Sources */,
 				7C641CF42923D8940082C6FB /* SpotifyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
